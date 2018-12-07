@@ -1,21 +1,23 @@
 # SimpleServer
 
-**TODO: Add description**
+**A very barebones server in Elixir, just to see what it can do :)**
 
-## Installation
+## How to use
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `simple_server` to your list of dependencies in `mix.exs`:
-
+Just run this in the terminal:
 ```elixir
-def deps do
-  [
-    {:simple_server, "~> 0.1.0"}
-  ]
-end
+iex -S mix
+```
+Then, using the curl command, or a web browser:
+```
+localhost:8080/hello 
+```
+gives you a "world" response (200), and anything else a 404.
+
+To get a 201 try running this:
+
+```
+curl -v -H 'Content-Type: application/json' "http://localhost:8080/post" -d '{"message": "hello world" }'
 ```
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/simple_server](https://hexdocs.pm/simple_server).
-
+This website ( https://www.jungledisk.com/blog/2018/03/19/tutorial-a-simple-http-server-in-elixir/ ) inspired me to do this!
